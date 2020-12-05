@@ -30,7 +30,7 @@
 			</div>
 			<div id="second" class="w3-container ">
 				<div class="w3-col s4">
-					<img class="w3-display w3-mobile w3-margin-bottom" src="Emblem_of_India.svg" style="width:50%">
+					<img class="w3-display w3-mobile w3-margin-bottom" src="Emblem_of_India.png" style="width:50%">
 				</div>
 				<div class="w3-col s4">
 					<img class="mySlides w3-middle w3-animate-fading w3-mobile w3-row-padding w3-margin-top w3-margin-top w3-mobile" src="home1.jpg" style="width:100%">
@@ -40,7 +40,7 @@
 				</div>
 				
 				<div class="w3-col s4 ">
-					<img class="w3-right w3-display w3-mobile w3-margin-bottom w3-margin-left" src="Emblem_of_India.svg" style="width:50%">
+					<img class="w3-right w3-display w3-mobile w3-margin-bottom w3-margin-left" src="Emblem_of_India.png" style="width:50%">
 				</div>
 				<script>
 				var myIndex = 0;
@@ -244,15 +244,15 @@
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join purpose on place_desc.place_id=purpose.place_id WHERE adventure=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -286,15 +286,15 @@
 			<div id="Pilgrimage" class="w3-container w3-border city w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG','id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join purpose on place_desc.place_id=purpose.place_id WHERE holy=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -326,15 +326,15 @@
 			<div id="Historic" class="w3-container w3-border city w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join purpose on place_desc.place_id=purpose.place_id WHERE historic=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -374,15 +374,15 @@
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join topography on place_desc.place_id=topography.place_id WHERE lakes=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -416,15 +416,15 @@
 			<div id="Mountains" class="w3-container w3-border city1 w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join topography on place_desc.place_id=topography.place_id WHERE valley=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -456,15 +456,15 @@
 			<div id="Nature" class="w3-container w3-border city1 w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join topography on place_desc.place_id=topography.place_id WHERE nature=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -503,15 +503,15 @@
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join type on place_desc.place_id=type.place_id WHERE summer=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -545,15 +545,15 @@
 			<div id="Monsoon" class="w3-container w3-border city2 w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join type on place_desc.place_id=type.place_id WHERE monsoon=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];
@@ -585,15 +585,15 @@
 			<div id="Winters" class="w3-container w3-border city2 w3-card-4 w3-margin w3-animate-zoom w3-mobile" style="display:none">
 				<div class="w3-row-padding w3-margin-top w3-margin-bottom w3-mobile">
 					<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
+						 
 						 $query = "SELECT * FROM place_desc join type on place_desc.place_id=type.place_id WHERE winter=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["img_name"];
 								$pname = $row["place_name"];
 								$pid = $row["place_id"];

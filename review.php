@@ -19,14 +19,14 @@
 							<?php
 								if(isset($_GET['id'])){
 								$p_id = $_GET['id'];
-								$con = mysql_connect('localhost','root','');
-								mysql_select_db('incredible_india', $con);
+								$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
+								
 								
 								$query1 = "SELECT AVG(rating) FROM reviews WHERE place_id= $p_id";
-								$result1 = mysql_query($query1);
+								$result1 = mysqli_query($con, $query1);
 								if($result1){
 					
-									while($r=mysql_fetch_array($result1)){
+									while($r=mysqli_fetch_array($result1, MYSQLI_ASSOC)){
 									$avg_star = $r['AVG(rating)']; 
 									}
 								}
@@ -35,9 +35,9 @@
 									$avg_star=0;
 								}
 								$query = "SELECT * FROM place_desc WHERE place_id= $p_id";
-								$result = mysql_query($query);
+								$result = mysqli_query($con, $query);
 								if($result){
-									while($row = mysql_fetch_array($result)){
+									while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 										$img_src = $row['img_name'];
 										$img_desc = $row['description'];
 										$place_name = $row['place_name'];
@@ -72,13 +72,13 @@
 												
 												//echo "$p_id";		
 												
-												$con = mysql_connect('localhost','root','');
-												mysql_select_db('incredible_india', $con);
+												$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
+												
  												
 												$query = "SELECT * FROM reviews WHERE place_id= $p_id ORDER BY created_at DESC";
-												$result = mysql_query($query);
+												$result = mysqli_query($con, $query);
 												if($result){
-														while($row = mysql_fetch_array($result)){
+														while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 															$username = $row['username'];
 															$content = $row["review"];
 															$time = $row["created_at"];
@@ -169,9 +169,9 @@
 													//$cons =$_POST['comment'];
 													$times = $t->format('m/d/y, H:i:s');
 
-												$con = mysql_connect('localhost','root','');
-												mysql_select_db('incredible_india', $con);
-												$b = mysql_query("INSERT INTO reviews (place_id,username,review,created_at,rating,email) VALUES($pp_id, '$username', '$content','$times', $stars,'$email')");
+												$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
+												
+												$b = mysqli_query($con, "INSERT INTO reviews (place_id,username,review,created_at,rating,email) VALUES($pp_id, '$username', '$content','$times', $stars,'$email')");
 													if($b){
 													echo "<meta http-equiv='refresh' content='0'>";
 													}

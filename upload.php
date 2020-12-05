@@ -53,15 +53,14 @@
 			</nav>
 		<div class="w3-col s9 w3-row-padding w3-mobile w3-light-grey " style="height:600px;overflow-y:scroll;">
 			<?php
-						$con = mysql_connect('localhost','root','');
+						$con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						if($con){
-						 mysql_select_db('incredible_india', $con);
 						 $query = "SELECT * FROM feedback WHERE permission=1";
 					  
-						 $result = mysql_query($query);
+						 $result = mysqli_query($con, $query);
 
 						 if($result){
-							while($row = mysql_fetch_array($result)){
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 								$img = $row["file_name"];
 								$pname = $row["place_name"];
 								$user_name = $row["user_name"];
@@ -136,10 +135,9 @@
 
 					  if(empty($errors)){
 						 move_uploaded_file($file_tmp,"uploads/".$file_name);
-						 $con = mysql_connect('localhost','root','');
+						 $con = mysqli_connect('localhost','id15471411_root','@WRsYbSZ[6Q&J6bG', 'id15471411_incredible_india');
 						  if($con){
-						  mysql_select_db('incredible_india', $con);
-						  mysql_query("INSERT INTO feedback (user_name,place_name,file_name,email_id) VALUES ('$user_name','$place_name','$file_name','$email_id')"); 
+						  mysqli_query($con, "INSERT INTO feedback (user_name,place_name,file_name,email_id) VALUES ('$user_name','$place_name','$file_name','$email_id')"); 
 						  }
 						  echo "Thank you for sharing! Your post will be posted on approval.";
 					  }else{
